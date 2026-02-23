@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+              if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("markmap-dark");
+              }
+            })(() => window.markmap,null,{"content":"Szakdolgozat Specifik&#xe1;ci&#xf3;","children":[{"content":"Automatikus Vad&#xe1;llat-felismer&#x151; Dashboard Docker-alap&#xfa; Deploymenttel","children":[],"payload":{"tag":"h2","lines":"2,3"}},{"content":"1. Bevezet&#xe9;s &#xe9;s Motiv&#xe1;ci&#xf3;","children":[],"payload":{"tag":"h2","lines":"6,7"}},{"content":"2. Probl&#xe9;mafelvet&#xe9;s","children":[],"payload":{"tag":"h2","lines":"12,13"}},{"content":"3. C&#xe9;lkit&#x171;z&#xe9;sek","children":[{"content":"F&#x151;c&#xe9;l","children":[],"payload":{"tag":"h3","lines":"20,21"}},{"content":"R&#xe9;szc&#xe9;lok","children":[{"content":"Megl&#xe9;v&#x151; neur&#xe1;lis h&#xe1;l&#xf3; modell integr&#xe1;l&#xe1;sa a backendbe","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"Felhaszn&#xe1;l&#xf3;i autentik&#xe1;ci&#xf3;s rendszer (regisztr&#xe1;ci&#xf3;, bejelentkez&#xe9;s)","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"K&#xe9;pfelt&#xf6;lt&#xe9;si funkci&#xf3; el&#x151;n&#xe9;zettel","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"AI-alap&#xfa; &#xe1;llatfaj-azonos&#xed;t&#xe1;s val&#xf3;sz&#xed;n&#x171;s&#xe9;gi pontsz&#xe1;mmal","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"Geolok&#xe1;ci&#xf3;s adatok kinyer&#xe9;se (EXIF/metadata) vagy manu&#xe1;lis megad&#xe1;s","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"Interakt&#xed;v t&#xe9;rk&#xe9;p (Leaflet/OpenStreetMap) a megfigyel&#xe9;sek megjelen&#xed;t&#xe9;s&#xe9;re","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"Supabase adatb&#xe1;zis &#xe9;s t&#xe1;rhely kezel&#xe9;se (&#xe1;llatfaj, helysz&#xed;n, id&#x151;pont, felhaszn&#xe1;l&#xf3;, k&#xe9;pek)","children":[],"payload":{"tag":"li","lines":"30,31"}},{"content":"Docker kont&#xe9;neriz&#xe1;ci&#xf3; &#xe9;s egyetemi szerveren t&#xf6;rt&#xe9;n&#x151; deployment","children":[],"payload":{"tag":"li","lines":"31,33"}}],"payload":{"tag":"h3","lines":"23,24"}}],"payload":{"tag":"h2","lines":"18,19"}},{"content":"4. Felhaszn&#xe1;lt Technol&#xf3;gi&#xe1;k &#xe9;s M&#xf3;dszertan","children":[{"content":"Backend","children":[{"content":"<strong>Python (FastAPI)</strong> &#x2013; REST API","children":[],"payload":{"tag":"li","lines":"38,39"}},{"content":"<strong>Supabase</strong> &#x2013; PostgreSQL adatb&#xe1;zis, autentik&#xe1;ci&#xf3;, t&#xe1;rhely (Storage)","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"<strong>Supabase-py</strong> &#x2013; Python kliens k&#xf6;nyvt&#xe1;r","children":[],"payload":{"tag":"li","lines":"40,41"}},{"content":"<strong>Pillow, NumPy</strong> &#x2013; k&#xe9;pfeldolgoz&#xe1;s","children":[],"payload":{"tag":"li","lines":"41,42"}},{"content":"<strong>TensorFlow/PyTorch</strong> &#x2013; AI model bet&#xf6;lt&#xe9;se &#xe9;s inferencia","children":[],"payload":{"tag":"li","lines":"42,44"}}],"payload":{"tag":"h3","lines":"37,38"}},{"content":"Frontend","children":[{"content":"<strong>HTML5, CSS3, JavaScript</strong> (vagy React/Vue.js egyszer&#x171;s&#xed;tett verzi&#xf3;)","children":[],"payload":{"tag":"li","lines":"45,46"}},{"content":"<strong>Supabase JavaScript kliens</strong> &#x2013; auth &#xe9;s adatb&#xe1;zis m&#x171;veletek","children":[],"payload":{"tag":"li","lines":"46,47"}},{"content":"<strong>Leaflet.js</strong> &#x2013; interakt&#xed;v t&#xe9;rk&#xe9;p","children":[],"payload":{"tag":"li","lines":"47,49"}}],"payload":{"tag":"h3","lines":"44,45"}},{"content":"DevOps/Deployment","children":[{"content":"<strong>Docker + Docker Compose</strong>","children":[],"payload":{"tag":"li","lines":"50,51"}},{"content":"<strong>Nginx reverse proxy</strong>","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"<strong>Egyetemi szerver (Linux VM)</strong> &#x2013; production k&#xf6;rnyezet","children":[],"payload":{"tag":"li","lines":"52,54"}}],"payload":{"tag":"h3","lines":"49,50"}},{"content":"Fejleszt&#xe9;si m&#xf3;dszertan","children":[{"content":"Agilis iter&#xe1;ci&#xf3; (2-3 hetes sprintek)","children":[],"payload":{"tag":"li","lines":"55,56"}},{"content":"Verzi&#xf3;kezel&#xe9;s: Git + GitHub/GitLab","children":[],"payload":{"tag":"li","lines":"56,57"}},{"content":"Tesztel&#xe9;s: unit tesztek (pytest), manu&#xe1;lis UI tesztek","children":[],"payload":{"tag":"li","lines":"57,59"}}],"payload":{"tag":"h3","lines":"54,55"}}],"payload":{"tag":"h2","lines":"35,36"}},{"content":"5. V&#xe1;rhat&#xf3; Eredm&#xe9;nyek","children":[{"content":"M&#x171;k&#xf6;d&#x151; webalkalmaz&#xe1;s forr&#xe1;sk&#xf3;dja (Git repository)","children":[],"payload":{"tag":"li","lines":"63,64"}},{"content":"Dockeriz&#xe1;lt alkalmaz&#xe1;s, amely <code>docker-compose up</code> paranccsal futtathat&#xf3;","children":[],"payload":{"tag":"li","lines":"64,65"}},{"content":"Dokument&#xe1;ci&#xf3;: telep&#xed;t&#xe9;si &#xfa;tmutat&#xf3;, API dokument&#xe1;ci&#xf3;, felhaszn&#xe1;l&#xf3;i k&#xe9;zik&#xf6;nyv","children":[],"payload":{"tag":"li","lines":"65,66"}},{"content":"&#xc9;l&#x151; demo az egyetemi szerveren","children":[],"payload":{"tag":"li","lines":"66,67"}},{"content":"Szakdolgozat &#xed;r&#xe1;s (40-60 oldal): bevezet&#xe9;s, irodalmi &#xe1;ttekint&#xe9;s, rendszerterv, implement&#xe1;ci&#xf3;, tesztel&#xe9;s, &#xf6;sszegz&#xe9;s","children":[],"payload":{"tag":"li","lines":"67,69"}}],"payload":{"tag":"h2","lines":"61,62"}},{"content":"6. &#xdc;temez&#xe9;s (12-14 h&#xe9;t)","children":[{"content":"<table data-lines=\"73,82\">\n<thead data-lines=\"73,74\">\n<tr data-lines=\"73,74\">\n<th>H&#xe9;t</th>\n<th>Feladat</th>\n</tr>\n</thead>\n<tbody data-lines=\"75,82\">\n<tr data-lines=\"75,76\">\n<td>1-2</td>\n<td>Irodalomkutat&#xe1;s, technol&#xf3;giai d&#xf6;nt&#xe9;sek, specifik&#xe1;ci&#xf3; v&#xe9;gleges&#xed;t&#xe9;se</td>\n</tr>\n<tr data-lines=\"76,77\">\n<td>3-4</td>\n<td>Supabase projekt be&#xe1;ll&#xed;t&#xe1;sa, adatb&#xe1;zis-s&#xe9;ma tervez&#xe9;se, backend alapok</td>\n</tr>\n<tr data-lines=\"77,78\">\n<td>5-6</td>\n<td>AI modell integr&#xe1;l&#xe1;sa, k&#xe9;pfelt&#xf6;lt&#xe9;s implement&#xe1;l&#xe1;sa (Supabase Storage)</td>\n</tr>\n<tr data-lines=\"78,79\">\n<td>7-8</td>\n<td>Frontend fejleszt&#xe9;s (UI, t&#xe9;rk&#xe9;p, Supabase auth integr&#xe1;ci&#xf3;)</td>\n</tr>\n<tr data-lines=\"79,80\">\n<td>9-10</td>\n<td>Dockeriz&#xe1;ci&#xf3;, tesztel&#xe9;s, hibajav&#xed;t&#xe1;s</td>\n</tr>\n<tr data-lines=\"80,81\">\n<td>11-12</td>\n<td>Deployment egyetemi szerverre, dokument&#xe1;ci&#xf3; &#xed;r&#xe1;sa</td>\n</tr>\n<tr data-lines=\"81,82\">\n<td>13-14</td>\n<td>Szakdolgozat &#xed;r&#xe1;sa, v&#xe9;gleges&#xed;t&#xe9;s, bead&#xe1;s</td>\n</tr>\n</tbody>\n</table>","children":[],"payload":{"tag":"table","lines":"73,82"}}],"payload":{"tag":"h2","lines":"71,72"}},{"content":"7. Kock&#xe1;zatok &#xe9;s Kezel&#xe9;s&#xfc;k","children":[{"content":"<table data-lines=\"87,93\">\n<thead data-lines=\"87,88\">\n<tr data-lines=\"87,88\">\n<th>Kock&#xe1;zat</th>\n<th>Megold&#xe1;s</th>\n</tr>\n</thead>\n<tbody data-lines=\"89,93\">\n<tr data-lines=\"89,90\">\n<td>AI modell pontatlans&#xe1;ga</td>\n<td>Confidence threshold be&#xe1;ll&#xed;t&#xe1;sa, manu&#xe1;lis korrekci&#xf3; lehet&#x151;s&#xe9;ge</td>\n</tr>\n<tr data-lines=\"90,91\">\n<td>Nagy k&#xe9;pf&#xe1;jlok kezel&#xe9;se</td>\n<td>K&#xe9;pkompresszi&#xf3;, Supabase Storage m&#xe9;retkorl&#xe1;tok kezel&#xe9;se</td>\n</tr>\n<tr data-lines=\"91,92\">\n<td>Supabase rate limiting</td>\n<td>Caching strat&#xe9;gia, batch m&#x171;veletek</td>\n</tr>\n<tr data-lines=\"92,93\">\n<td>Egyetemi szerver korl&#xe1;tai</td>\n<td>Korai tesztel&#xe9;s a c&#xe9;l k&#xf6;rnyezetben, resource monitoring</td>\n</tr>\n</tbody>\n</table>","children":[],"payload":{"tag":"table","lines":"87,93"}}],"payload":{"tag":"h2","lines":"85,86"}},{"content":"8. Irodalomjegyz&#xe9;k (kezdeti)","children":[{"content":"Supabase dokument&#xe1;ci&#xf3; (supabase.com/docs)","children":[],"payload":{"tag":"li","lines":"98,99"}},{"content":"FastAPI dokument&#xe1;ci&#xf3; (fastapi.tiangolo.com)","children":[],"payload":{"tag":"li","lines":"99,100"}},{"content":"Docker dokument&#xe1;ci&#xf3; (docs.docker.com)","children":[],"payload":{"tag":"li","lines":"100,101"}},{"content":"Leaflet.js dokument&#xe1;ci&#xf3; (leafletjs.com)","children":[],"payload":{"tag":"li","lines":"101,102"}},{"content":"[V&#xe1;lasztott AI modell eredeti publik&#xe1;ci&#xf3;ja]","children":[],"payload":{"tag":"li","lines":"102,103"}}],"payload":{"tag":"h2","lines":"96,97"}}],"payload":{"tag":"h1","lines":"0,1"}},{})</script>
+</body>
+</html>
