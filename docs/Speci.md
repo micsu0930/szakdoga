@@ -100,4 +100,4 @@ Full-stack webalkalmazás fejlesztése vadállat-felismerő AI modellel, térké
 - FastAPI dokumentáció (fastapi.tiangolo.com)
 - Docker dokumentáció (docs.docker.com)
 - Leaflet.js dokumentáció (leafletjs.com)
-- [Választott AI modell eredeti publikációja]
+- Keras dokumentáció
