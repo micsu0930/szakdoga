@@ -164,6 +164,8 @@ services:
       SUPABASE_URL: http://kong:8000
       SUPABASE_KEY: ${ANON_KEY}
       DASH_SECRET_KEY: ${DASH_SECRET_KEY}
+    volumes:
+      - ../wildlife_classifier_final.keras:/app/wildlife_classifier_final.keras:ro
     networks:
       - supabase-network
 

@@ -75,14 +75,17 @@ layout = html.Div(
                     className="features-grid",
                     children=[
                         _feature_card(
+                            "",
                             "Feltöltés",
                             "Készíts egy képet egy vadállatról és töltsd fel",
                         ),
                         _feature_card(
+                            "",
                             "AI analízis",
                             "Az AI elemzi a képet és azonosítja a vadállatot",
                         ),
                         _feature_card(
+                            "",
                             "Klasszifikáció",
                             "Az AI megadja az állat faját valószínüségi pontal",
                         ),
