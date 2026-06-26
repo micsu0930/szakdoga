@@ -67,10 +67,21 @@ app.layout = html.Div([
     Input("auth-store", "data"),
 )
 def update_nav(auth_data):
+    """
+    Frissíti a globális navigációs linkeket a felhasználó hitelesítési állapota alapján.
+    
+    Args:
+        auth_data (dict): Az 'auth-store'-ból származó adatok, amelyek tartalmazzák a tokeneket és a felhasználói infókat.
+        
+    Returns:
+        list: Dash HTML komponensek listája, amelyek a navigációs linkeket reprezentálják.
+    """
     
     if auth_data and auth_data.get("access_token"):
         return [
             html.A("Dashboard", href="/dashboard", className="nav-link"),
+            html.A("Map Gallery", href="/gallery", className="nav-link"),
+            html.A("Training Logs", href="/tensorboard", className="nav-link"),
             html.A("Logout", href="/logout", className="nav-link nav-link-outline"),
         ]
     return [

@@ -86,12 +86,14 @@ layout = html.Div(
     prevent_initial_call=True,
 )
 def handle_login(n_clicks, email, password):
-
+    """
+    Kezeli a bejelentkezési folyamatot a megadott adatok alapján.
+    """
     if not n_clicks:
         return no_update, no_update, no_update
 
     if not email or not password:
-        return no_update, "Please fill in all fields.", no_update
+        return no_update, "Kérjük, töltsön ki minden mezőt.", no_update
 
     result = sign_in(email.strip(), password)
 

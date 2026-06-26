@@ -5,6 +5,7 @@ dash.register_page(__name__, path="/", title="Vadvilág - Dashboard")
 
 
 def _feature_card(icon: str, title: str, description: str):
+    """Létrehoz egy funkciókártyát ikonnal, címmel és leírással."""
     return html.Div(
         className="feature-card",
         children=[
@@ -16,6 +17,7 @@ def _feature_card(icon: str, title: str, description: str):
 
 
 def _stat_card(value: str, label: str):
+    """Létrehoz egy statisztikai kártyát értékkel és címkével."""
     return html.Div(
         className="stat-card",
         children=[
@@ -101,10 +103,10 @@ layout = html.Div(
                 html.Div(
                     className="stats-grid",
                     children=[
-                        _stat_card("10+", "Species"),
-                        _stat_card("95%+", "Accuracy"),
-                        _stat_card("< 2s", "Response"),
-                        _stat_card("24/7", "Available"),
+                        _stat_card("590+", "Faj"),
+                        _stat_card("88%", "Pontosság"),
+                        _stat_card("< 2 mp", "Válaszidő"),
+                        _stat_card("24/7", "Elérhetőség"),
                     ],
                 ),
             ],

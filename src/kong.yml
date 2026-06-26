@@ -26,7 +26,7 @@ services:
 consumers:
   - username: ANON
     keyauth_credentials:
-      - key: "{{SUPABASE_ANON_KEY}}"
+      - key: "eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJyb2xlIjogImFub24iLCAiaXNzIjogInN1cGFiYXNlIiwgImlhdCI6IDE3NzQwMTYyNjAsICJleHAiOiAyMDg5Mzc2MjYwfQ._uQ50DhyTPbQZxuWM8T6-GzL0RkocGArpmh4_dKLfIo"
   - username: SERVICE_ROLE
     keyauth_credentials:
-      - key: "{{SUPABASE_SERVICE_KEY}}"
+      - key: "eyJhbGciOiAiSFMyNTYiLCAidHlwIjogInNlcnZpY2Vfcm9sZSIsICJpc3MiOiAic3VwYWJhc2UiLCAiaWF0IjogMTc3NDAxNjI2MCwgImV4cCI6IDIwODkzNzYyNjB9.yj_M_79Xr7Aj3msxtG2C_m4GDo5TiYvqLDCAM0GxHVA"

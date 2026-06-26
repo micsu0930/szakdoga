@@ -98,12 +98,14 @@ layout = html.Div(
     prevent_initial_call=True,
 )
 def handle_register(n_clicks, email, password, confirm):
-
+    """
+    Kezeli az új felhasználói regisztrációt.
+    """
     if not n_clicks:
         return no_update, no_update, no_update
 
     if not email or not password or not confirm:
-        return "Please fill in all fields.", "", no_update
+        return "Kérjük, töltsön ki minden mezőt.", "", no_update
 
     if len(password) < 6:
         return "Jelszava legyen legalább 6 karakter.", "", no_update

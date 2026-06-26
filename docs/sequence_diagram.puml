@@ -1,0 +1,26 @@
+@startuml
+actor User
+participant "Dashboard UI" as UI
+participant "Back-end (Callbacks)" as BE
+participant "ConvNeXt AI Model" as AI
+participant "Supabase (Data)" as SB
+participant "Supabase (Auth)" as Auth
+
+User -> UI : Upload Image & Pick Location
+UI -> BE : Trigger update_output()
+BE -> Auth : Validate Token
+Auth --> BE : Token OK
+
+BE -> AI : Preprocess & Predict
+AI --> BE : Class: "Sus scrofa", Conf: 98%
+
+group Transaction: Persistent Save
+    BE -> SB : Insert sighting (user_uploads)
+    SB --> BE : Success
+    BE -> SB : Upsert user stats (user_stats)
+    SB --> BE : Success
+end
+
+BE -> UI : Display Result & Update Counters
+UI -> User : Visual Feedback
+@enduml

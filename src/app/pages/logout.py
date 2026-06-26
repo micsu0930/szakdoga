@@ -27,4 +27,7 @@ layout = html.Div(
     prevent_initial_call=True,
 )
 def handle_logout(pathname):
+    """
+    Kijelentkezteti a felhasználót a munkamenet adatainak törlésével és a kezdőoldalra irányítással.
+    """
     return None, "/"

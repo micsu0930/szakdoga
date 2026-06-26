@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+actor "Kutató / Felhasználó" as User
+actor "Supabase Auth" as Auth << Service >>
+actor "TensorFlow Model" as AI << AI >>
+
+package "Vadvilág Rendszer" {
+  usecase "Bejelentkezés / Regisztráció" as UC1
+  usecase "Kép feltöltése és Klasszifikáció" as UC2
+  usecase "Sighting mentése koordinátákkal" as UC3
+  usecase "Globális térkép megtekintése" as UC4
+  usecase "Tanítási metrikák elemzése" as UC5
+  usecase "Saját statisztikák megtekintése" as UC6
+}
+
+User --> UC1
+User --> UC2
+User --> UC4
+User --> UC5
+User --> UC6
+
+UC1 -- Auth
+UC2 -- AI
+UC2 <.. UC3 : <<include>>
+@enduml

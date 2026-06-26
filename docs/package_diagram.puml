@@ -1,0 +1,42 @@
+@startuml
+package "szakdoga (Project Root)" {
+    folder "docs" {
+        [Documentation Files]
+    }
+    
+    folder "src" {
+        folder "app" {
+            [app.py (Entry)]
+            [auth.py (Auth Helpers)]
+            [classes.py (Species List)]
+            
+            folder "pages" {
+                [dashboard.py]
+                [map_gallery.py]
+                [tensorboard_viewer.py]
+                [login.py / register.py]
+            }
+            
+            folder "assets" {
+                [CSS / Images]
+            }
+        }
+        
+        folder "logs" {
+            folder "fit" {
+                [Training Event Files]
+            }
+        }
+        
+        folder "training_checkpoints" {
+            [Model Backups]
+        }
+        
+        [docker-compose.yml]
+    }
+}
+
+app.py --> pages : registers
+pages --> auth.py : uses for Supabase
+dashboard.py --> classes.py : maps predictions
+@enduml

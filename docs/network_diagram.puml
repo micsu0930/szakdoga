@@ -1,0 +1,16 @@
+@startnwdiag
+network external {
+  address = "192.168.x.x/24"
+  user_browser [address = "192.168.x.10"];
+  docker_host [address = "192.168.x.20"];
+}
+
+network supabase_network {
+  address = "172.18.0.x/16"
+  docker_host [address = "172.18.0.1"];
+  wildlife_dashboard [address = "172.18.0.5"];
+  wildlife_tensorboard [address = "172.18.0.6"];
+  supabase_kong [address = "172.18.0.2"];
+  supabase_db [address = "172.18.0.3"];
+}
+@endnwdiag

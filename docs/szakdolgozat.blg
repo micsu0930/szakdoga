@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'szakdolgozat.blg'
+[246] biber-MSWIN64:342> INFO - === 
+[290] Biber.pm:421> INFO - Reading 'szakdolgozat.bcf'
+[420] Biber.pm:1002> INFO - Found 8 citekeys in bib section 0
+[442] Biber.pm:4487> INFO - Processing section 0
+[458] Biber.pm:4678> INFO - Looking for bibtex file 'elteikthesis.bib' for section 0
+[528] bibtex.pm:1713> INFO - LaTeX decoding ...
+[547] bibtex.pm:1519> INFO - Found BibTeX data source 'elteikthesis.bib'
+[622] UCollate.pm:68> INFO - Overriding locale 'hungarian' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[622] UCollate.pm:68> INFO - Overriding locale 'hungarian' defaults 'variable = shifted' with 'variable = non-ignorable'
+[622] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'hungarian'
+[622] Biber.pm:4313> INFO - No sort tailoring available for locale 'hungarian'
+[633] bbl.pm:676> INFO - Writing 'szakdolgozat.bbl' with encoding 'UTF-8'
+[639] bbl.pm:779> INFO - Output to szakdolgozat.bbl

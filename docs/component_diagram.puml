@@ -1,0 +1,24 @@
+@startuml
+package "Vadvilág Web App" {
+    [Dash Dashboard] as Dash
+    [Auth Module] as AuthMod
+    [Model Processor] as AI
+}
+
+package "External Services" {
+    [Supabase Auth] as SBAuth
+    [Supabase PostgREST] as SBData
+    [TensorBoard Service] as TB
+}
+
+database "PostgreSQL" as DB
+file "ConvNeXt Model" as Model
+
+Dash --> AuthMod : uses
+AuthMod --> SBAuth : API calls
+Dash --> AI : sends images
+AI ..> Model : loads
+Dash --> SBData : updates sightings/stats
+SBData --> DB : persistent storage
+Dash --> TB : embeds via Iframe
+@enduml

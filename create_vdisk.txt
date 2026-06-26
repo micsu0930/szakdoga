@@ -1,0 +1,2 @@
+create vdisk file="E:\dataset.vhdx" maximum=307200 type=expandable
+exit

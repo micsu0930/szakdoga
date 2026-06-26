@@ -1,0 +1,37 @@
+@startuml
+[*] --> Unauthenticated
+
+state Unauthenticated {
+    [*] --> LandingPage
+    LandingPage --> LoginPage : Click Login
+    LandingPage --> RegisterPage : Click Register
+    
+    LoginPage --> RegisterPage : No account?
+    RegisterPage --> LoginPage : Successfully registered
+}
+
+state Authenticated {
+    [*] --> Dashboard
+    Dashboard --> MapGallery : Navigate
+    MapGallery --> TrainingLogs : Navigate
+    TrainingLogs --> Dashboard : Navigate
+}
+
+Unauthenticated --> Authenticated : HTTP POST (credentials) \n/ Success & Set Session
+Authenticated --> Unauthenticated : Click Logout \n/ Clear Session
+
+state LoginPage {
+    state "Validating..." as Validating
+    [*] --> Input
+    Input --> Validating : Submit
+    Validating --> Input : Invalid Credentials \n(Show Error)
+    Validating --> Authenticated : Valid JWT Received
+}
+
+note right of Authenticated
+    All pages check 'auth-store'
+    If no access_token, 
+    redirect to /login
+end note
+
+@enduml

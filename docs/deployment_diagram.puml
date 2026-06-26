@@ -1,0 +1,23 @@
+@startuml
+node "User Desktop (Browser)" as Client
+
+node "Docker Host (WSL2 / Linux)" {
+    
+    node "network: supabase-network" {
+        component [wildlife-dashboard] as DashCont
+        component [wildlife-tensorboard] as TBCont
+        component [supabase-db (PostgreSQL)] as DBCont
+        component [supabase-auth / rest / kong] as SBStack
+    }
+    
+    storage "Host Volume: ./logs" as LogVol
+    storage "Host Volume: ./training_checkpoints" as CheckVol
+}
+
+Client -- DashCont : HTTP (8050)
+Client -- TBCont : HTTP (6006)
+DashCont -- SBStack : Internal Communication
+SBStack -- DBCont : PostgreSQL (5432)
+TBCont ..> LogVol : Reads RO
+DashCont ..> CheckVol : Saves Backups
+@enduml
